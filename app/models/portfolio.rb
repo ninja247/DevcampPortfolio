@@ -6,7 +6,9 @@ class Portfolio < ApplicationRecord
   end
 
 
-scope :ruby_on_rails_portfolio_items, ->{ where(subtitle: 'Ruby On Rails')}
+ scope :ruby_on_rails_portfolio_items, ->{ where(subtitle: 'Ruby On Rails')}
+
+#sdfgsdfgdgfdsgsdf
 
 after_initialize :set_defaults
 
