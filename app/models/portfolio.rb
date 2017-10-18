@@ -8,7 +8,7 @@ class Portfolio < ApplicationRecord
 
  scope :ruby_on_rails_portfolio_items, ->{ where(subtitle: 'Ruby On Rails')}
 
-#sdfgsdfgdgfdsgsdf
+#testing password on terminal
 
 after_initialize :set_defaults
 
