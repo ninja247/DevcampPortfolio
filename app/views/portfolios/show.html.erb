@@ -6,9 +6,24 @@
 <em> <%= @portfolio_item.subtitle %> </em>
 <p> <%= @portfolio_item.body %></p>
 
-<h2>  Techonologies used</h2>
+<h2>  Technologies used</h2>
 
-<% @portfolio_item.techonologies.each do |t| %>
+<% @portfolio_item.technologies.each do |t| %>
 
 <p> <%= t.name %> </p>
+
 <% end %>
+
+<hr>
+
+<%= params.inspect %>
+
+#ac params is the intermediary step that the controller uses between the view and the model
+
+<hr>
+<!-- 
+<%= params.inspect %>
+
+ --><hr>
+
+<%#= session.inspect %>
