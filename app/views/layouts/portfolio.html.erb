@@ -6,7 +6,7 @@
 
     <meta name="keywords" content = "<%= @seo_keywords %> " />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -15,7 +15,6 @@
     <p class="alert"><%= alert %></p>
 
 
-<%= render "shared/nav"%>
 
 
 <!-- = show's ruby
@@ -30,6 +29,7 @@ logic doesn't display -->
 
  
     <%= yield %>
+    <%= render "shared/nav"%>
 
     <% if session[:source]%> 
     Thanks for visiting me from  <%= session[:source] %>
