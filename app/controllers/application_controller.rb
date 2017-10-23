@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include DeviseWhitelist
   include SetSource
   include CurrentUserConcern
+  include DefaultPageContent
 
 #white listed
 #ac what is being whitelisted bt the devise controller?
@@ -11,5 +12,6 @@ class ApplicationController < ActionController::Base
   
 #nul variable design pattern
 
+ 
 
 end
