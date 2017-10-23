@@ -29,7 +29,7 @@ logic doesn't display -->
 
  
     <%= yield %>
-    <%= render "shared/nav"%>
+    <%= render "shared/nav", location: 'top'%>
 
     <% if session[:source]%> 
     Thanks for visiting me from  <%= session[:source] %>
