@@ -27,6 +27,8 @@ module ApplicationHelper
 
 # to comment cmnd forward slash
 
-
+  def copyright_generator
+    DevcampViewTool247::Renderer.copyright 'Andrew Coleman', 'All rights reserved'
+  end
 
 end

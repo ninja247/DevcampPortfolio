@@ -12,6 +12,4 @@ class ApplicationController < ActionController::Base
   
 #nul variable design pattern
 
- 
-
 end
