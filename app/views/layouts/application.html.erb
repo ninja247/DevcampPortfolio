@@ -14,19 +14,18 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-
+<!-- location: is what is allowing a do block to be run over  -->
 <%= render "shared/nav", location: 'top' %>
 
 
     <%= login_helper %>
     #ac refactored the helper method to the helper model
 
- 
-    <%= yield %>
 
-    <% if session[:source]%> 
-    Thanks for visiting me from  <%= session[:source] %>
-    <% end%>
+    <%= yield %>
+    <%= source_helper "application" %>
+
+
  
 
   </body>

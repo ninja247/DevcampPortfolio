@@ -21,14 +21,12 @@
 logic doesn't display -->
 
  
- <%= login_helper %>
+    <%= login_helper %>
 
     <%= yield %>
     <%= render "shared/nav", location: 'top'%>
+    <%= source_helper "portfolio" %>
 
-    <% if session[:source]%> 
-    Thanks for visiting me from  <%= session[:source] %>
-    <% end%>
  
 
   </body>
