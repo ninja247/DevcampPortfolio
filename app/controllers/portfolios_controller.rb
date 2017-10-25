@@ -80,6 +80,8 @@ before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
     @portfolio_item = Portfolio.find(params[:id])
   end
 
+#edit doesn't have admin logic
+
 
 end
 
