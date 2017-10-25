@@ -13,3 +13,6 @@ class ApplicationController < ActionController::Base
 #nul variable design pattern
 
 end
+
+#admin admin andrew_coleman@byu.net andrew47
+#guest andrewaricoleman@gmail.com forgetme

@@ -1,5 +1,10 @@
 class PortfoliosController < ApplicationController
+
+# we need a :set_portfolio_item method before we can use this 
+before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
   layout 'portfolio'
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :edit]}, site_admin: :all
+
   
   def index
     @portfolio_items = Portfolio.all
@@ -69,6 +74,11 @@ class PortfoliosController < ApplicationController
     )
   end
 
+
+
+ def set_portfolio_item
+    @portfolio_item = Portfolio.find(params[:id])
+  end
 
 
 end
