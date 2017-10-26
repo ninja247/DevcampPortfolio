@@ -1,17 +1,11 @@
 module ApplicationHelper
-  def sample_helper
-    "<p>my helper </p>".html_safe
-  end
 
-  # fix this in the break  
 
-  def login_helper
-    if current_user.is_a?(User)
-      link_to "Logout", destroy_user_session_path, method: :delete
+  def login_helper style
+    if current_user.is_a?(GuestUser)
+      (link_to "Register", new_user_registration_path, class: style) + " ".html_safe + (link_to "Login", new_user_session_path, class: style)
     else
-      (link_to "Register", new_user_registration_path) +
-      "<br>".html_safe +
-      (link_to "Login", new_user_session_path)
+      link_to "Logout", destroy_user_session_path, method: :delete, class: style
     end
   end
 
@@ -30,6 +24,10 @@ module ApplicationHelper
 
   def copyright_generator
     DevcampViewTool247::Renderer.copyright 'Andrew Coleman', 'All rights reserved'
+  end
+
+  def sample_helper
+    "<p>my helper </p>".html_safe
   end
 
 end
