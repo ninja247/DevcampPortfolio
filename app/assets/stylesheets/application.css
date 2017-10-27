@@ -164,3 +164,30 @@ body {
   }
 }
 
+
+
+/*
+ + * Custom Styles
+ + */
+
+
+.card-block {
+  color:black;
+  text_align:left;
+}
+
+.auth-links a {
+  color:black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
