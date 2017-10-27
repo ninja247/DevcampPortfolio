@@ -1,7 +1,4 @@
-@import "bootstrap"
-
-
-
+@import "bootstrap";
 
 /*
  * Globals
@@ -63,6 +60,7 @@ body {
   padding: 2rem;
 }
 
+
 /*
  * Header
  */
@@ -106,6 +104,7 @@ body {
   }
 }
 
+
 /*
  * Cover
  */
@@ -126,6 +125,7 @@ body {
 .mastfoot {
   color: rgba(255,255,255,.5);
 }
+
 
 /*
  * Affix and center
@@ -162,31 +162,24 @@ body {
 }
 
 /*
- + * Custom Styles
- + */
+ * Custom Styles
+ */
 
 .card-block {
   color: black;
-  text_align: left;
+  text-align: left;
 }
 
 .auth-links a {
   color: black;
 }
 
-.register-text{
+.register-text {
   text-align: right;
 }
-
 
 .login > .card {
   width: 22rem;
   margin: 0 auto;
   float: none;
 }
-
-
-
-
-
-

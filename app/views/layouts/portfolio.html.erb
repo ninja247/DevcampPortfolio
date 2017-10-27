@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title> <%= @page_title %> </title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
 
-    <meta name="keywords" content = "<%= @seo_keywords %> " />
+    <meta name="keywords" content="<%= @seo_keywords %>" />
 
     <%= stylesheet_link_tag    'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -14,20 +14,12 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <%= render "shared/nav", location: 'top' %>
 
-
-
-<!-- = show's ruby
-logic doesn't display -->
-
- 
     <%= login_helper %>
 
     <%= yield %>
-    <%= render "shared/nav", location: 'top'%>
-    <%= source_helper "portfolio" %>
 
- 
-
+    <%= source_helper("application") %>
   </body>
 </html>
