@@ -63,7 +63,6 @@ body {
   padding: 2rem;
 }
 
-
 /*
  * Header
  */
@@ -107,7 +106,6 @@ body {
   }
 }
 
-
 /*
  * Cover
  */
@@ -128,7 +126,6 @@ body {
 .mastfoot {
   color: rgba(255,255,255,.5);
 }
-
 
 /*
  * Affix and center
@@ -164,23 +161,22 @@ body {
   }
 }
 
-
-
 /*
  + * Custom Styles
  + */
 
-
 .card-block {
-  color:black;
-  text_align:left;
+  color: black;
+  text_align: left;
 }
 
 .auth-links a {
-  color:black;
+  color: black;
 }
 
-
+.register-text{
+  text-align: right;
+}
 
 
 
