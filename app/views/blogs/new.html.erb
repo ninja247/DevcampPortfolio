@@ -1,18 +1,7 @@
-<%= form_for(@blog) do |f| %>
-<div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
+<div class="col-sm-8 blog-main">
+  <h1>New Blog</h1>
 
-  <div class="field">
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </div>
+  <%= render 'form', blog: @blog %>
 
-
-
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%= link_to 'Back', blogs_path %>
+</div>

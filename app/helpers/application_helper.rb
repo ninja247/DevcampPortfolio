@@ -1,29 +1,24 @@
 module ApplicationHelper
-  def sample_helper
-    "<p>my helper </p>".html_safe
-  end
 
-  # fix this in the break  
 
-  def login_helper
-    if current_user.is_a?(User)
-      link_to "Logout", destroy_user_session_path, method: :delete
+   def login_helper style = ''
+    if current_user.is_a?(GuestUser)
+      (link_to "Register", new_user_registration_path, class: style) +
+      " ".html_safe +
+      (link_to "Login", new_user_session_path, class: style)
     else
-      (link_to "Register", new_user_registration_path) +
-      "<br>".html_safe +
-      (link_to "Login", new_user_session_path)
+      link_to "Logout", destroy_user_session_path, method: :delete, class: style
     end
   end
-
 
     #application helper vs partial
     #when you have a lot of logic use a helper when you pass in data use a partial  
 
   def source_helper(layout_name)
     if session[:source]
-      greeting = "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} page"
-      content_tag(:p, greeting, class: "source_greeting") 
-    end  
+      greeting = "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} layout"
+      content_tag(:p, greeting, class: "source-greeting")
+    end
   end
 
 # to comment cmnd forward slash
@@ -32,4 +27,45 @@ module ApplicationHelper
     DevcampViewTool247::Renderer.copyright 'Andrew Coleman', 'All rights reserved'
   end
 
+#database of nav links
+
+def nav_items
+  [
+    {
+      url: root_path,
+      title: 'Home'   
+    },
+    {
+      url: about_me_path,
+      title: 'About Me'   
+    },
+    {
+      url: contact_path,
+      title: 'Contact'   
+    },
+    {
+      url: blogs_path,
+      title: 'Blog'   
+    },
+    {
+      url: portfolios_path,
+      title: 'Portfolio'   
+    },
+  ]
+end
+
+  def nav_helper style, tag_type
+    nav_links = ''
+
+    nav_items.each do |item|
+      nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+    end
+
+    nav_links.html_safe
+  end
+
+
+  def active? path
+    "active" if current_page? path
+  end
 end
