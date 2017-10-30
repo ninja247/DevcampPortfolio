@@ -27,8 +27,3 @@ Things you may want to cover:
 # devcamp-portfolio
 # DevcampPortfolio
 
-
-
-
-
-
