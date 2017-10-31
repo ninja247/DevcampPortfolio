@@ -70,6 +70,8 @@ before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
       :title,
       :subtitle,
       :body,
+      :main_image,
+      :thumb_image,
       technologies_attributes: [:name]
     )
   end
