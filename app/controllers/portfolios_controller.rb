@@ -3,14 +3,14 @@ class PortfoliosController < ApplicationController
 # we need a :set_portfolio_item method before we can use this 
 before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
   layout 'portfolio'
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :edit]}, site_admin: :all
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :edit, :sort]}, site_admin: :all
 
   
   def index
     @portfolio_items = Portfolio.by_position
   end
 
-   def sort
+  def sort
     params[:order].each do |key, value|
       Portfolio.find(value[:id]).update(position: value[:position])
     end
