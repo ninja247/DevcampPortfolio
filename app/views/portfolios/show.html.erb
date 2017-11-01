@@ -1,29 +1,26 @@
-<h1>Show</h1>
+<div class="container portfolio-container">
+  <div class="row">
+    <div class="col-md-7">
+      <%= image_tag portfolio_img(@portfolio_item.thumb_image, 'main'), width: '100%' %>
+      
+    </div>
 
-<%= image_tag @portfolio_item.main_image %>
+    <div class="col-md-5">
+      <h1><%= @portfolio_item.title %></h1>
 
-<h1><%= @portfolio_item.title %> </h1>
-<em> <%= @portfolio_item.subtitle %> </em>
-<p> <%= @portfolio_item.body %></p>
+      <hr>
 
-<h2>  Technologies used</h2>
+      <em><%= @portfolio_item.subtitle %></em>
 
-<% @portfolio_item.technologies.each do |t| %>
+      <p><%= @portfolio_item.body %></p>
 
-<p> <%= t.name %> </p>
+      <hr>
 
-<% end %>
+      <h3>Technologies Used:</h3>
 
-<hr>
-
-<%= params.inspect %>
-
-#ac params is the intermediary step that the controller uses between the view and the model
-
-<hr>
-<!-- 
-<%= params.inspect %>
-
- --><hr>
-
-<%#= session.inspect %>
+      <% @portfolio_item.technologies.each do |t| %>
+      <p><%= t.name %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

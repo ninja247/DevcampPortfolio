@@ -27,3 +27,8 @@ Things you may want to cover:
 # devcamp-portfolio
 # DevcampPortfolio
 
+<!-- 
+cmd + ctrl + uparrow/down arrow
+  switch the lines
+
+ -->
