@@ -1,44 +1,26 @@
-<!-- update this
+<div class="container portfolio-container">
+  <div class="row">
+    <div class="col-md-7">
+      <%= image_tag portfolio_img(@portfolio_item.thumb_image, 'main'), width: '100%' %>
+      
+    </div>
 
+    <div class="col-md-5">
+      <h1><%= @portfolio_item.title %></h1>
 
-#ac 
+      <hr>
 
-https://github.com/jordanhudgens/devcamp-portfolio/blob/c1695642345d5c4fd7d36eef05681c5b91106c6e/app/views/portfolios/show.html.erb
+      <em><%= @portfolio_item.subtitle %></em>
 
- -->
+      <p><%= @portfolio_item.body %></p>
 
+      <hr>
 
-<h1>Show</h1>
+      <h3>Technologies Used:</h3>
 
-<%= image_tag @portfolio_item.main_image %>
-
-<h1><%= @portfolio_item.title %> </h1>
-<em> <%= @portfolio_item.subtitle %> </em>
-<p> <%= @portfolio_item.body %></p>
-
-<h2>  Technologies used</h2>
-
-<% @portfolio_item.technologies.each do |t| %>
-
-<p> <%= t.name %> </p>
-
-<% end %>
-
-<hr>
-
-<%= params.inspect %>
-
-<!-- #ac params is the intermediary step that the controller uses between the view and the model
- -->
-
-<hr>
-<!-- 
- params.inspect
-
- -->
-
- <hr>
-
-<%#= session.inspect %>
-
-
+      <% @portfolio_item.technologies.each do |t| %>
+      <p><%= t.name %></p>
+      <% end %>
+    </div>
+  </div>
+</div>

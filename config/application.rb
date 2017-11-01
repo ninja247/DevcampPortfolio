@@ -10,6 +10,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+require "dotenv-rails"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -22,8 +23,6 @@ module DevcampPortfolio
 # taking this out
 
     config.action_controller.permit_all_parameters = true
-
-
 
   end
 end
