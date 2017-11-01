@@ -1,9 +1,8 @@
 class Portfolio < ApplicationRecord
   has_many :technologies
-  accepts_nested_attributes_for :technologies, 
-                          reject_if: lambda{|attrs| attrs['name'].blank?}
-                            
-  includes Placeholder
+  accepts_nested_attributes_for :technologies,
+                                allow_destroy: true,
+                                reject_if: lambda{|attrs| attrs['name'].blank?}
   validates_presence_of :title, :body
 
   mount_uploader :thumb_image, PortfolioUploader
@@ -12,26 +11,10 @@ class Portfolio < ApplicationRecord
   def self.angular
     where(subtitle: 'Angular')
   end
-  # scope :ruby_on_rails_portfolio_items, ->{ where(subtitle: 'Ruby On Rails')}
 
-  #reset the image size
-
-
-
-
-#ac not sure how to incorporate the portfolio changing position
-
-
-# not sure when this is going to come ing
-
-  # def self.by_position
-  #   order("position ASC")
-  # end
-
+  def self.by_position
+      order("position ASC")
+  end
 
   scope :ruby_on_rails_portfolio_items, -> { where(subtitle: 'Ruby on Rails')}
-
 end
-
-
-
