@@ -19,7 +19,7 @@ module PagesHelper
     }ix
     tweet.gsub(regex) do |url|
       "<a href='#{url}' target='_blank'>#{url}</a>"
-#ac you need html_safe because you're passing a URL through a ruby file
+#ac  you need html_safe because you're passing a URL through a ruby file
     end.html_safe
   end
 end
