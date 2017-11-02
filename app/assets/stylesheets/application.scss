@@ -149,7 +149,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    width: 65%; /* Must be percentage or pixels for horizontal alignment */
   }
 }
 
@@ -208,8 +208,18 @@ body {
   color: white;
 }
 
+.tech-news {
+color: black;
+margin: 20px;
+}
 
+.tech-news > .card {
+padding: 30px;
+}
 
+.tech-news a {
+color: green;
+}
 
 
 
