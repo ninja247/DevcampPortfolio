@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :comments
   devise_for :users, path: '', path_names:{ sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
   resources :portfolios, except: [:show]
-
 #ac comment out the next line  
   get 'portfolio/:id', to: 'portfolios#show', as:'portfolio_show'
   get 'about-me', to: 'pages#about'
@@ -16,8 +16,7 @@ Rails.application.routes.draw do
     end
   end
 
-root to: 'pages#home'
+  mount ActionCable.server => '/cable'
 
+  root to: 'pages#home'
 end
-
-  
