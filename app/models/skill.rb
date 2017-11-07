@@ -1,6 +1,5 @@
 class Skill < ApplicationRecord
-#includes Placeholder
-validates_presence_of :title, :percent_utilized
+  validates_presence_of :title, :percent_utilized
 
 # def self.angular
 #     where(subtitle: 'Angular')

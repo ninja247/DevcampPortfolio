@@ -16,3 +16,6 @@ end
 
 #admin admin andrew_coleman@byu.net andrew47
 #guest andrewaricoleman@gmail.com forgetme
+
+#ac about page buttons are below the skill percentages
+

@@ -6,6 +6,17 @@ User.create!(
     roles: "site_admin"
   )
 
+puts "1 Admin user created"
+
+User.create!(
+    email: "guestuser@gmail.com",
+    name: "guest user",
+    password: "qwerty",
+    password_confirmation: "qwerty",
+  )
+
+puts "1 guest user created"
+
 3.times do |topic|
   Topic.create!(
     title: "Topic #{topic}"
