@@ -88,4 +88,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+
+#ac need to update the heroku url to a correct URL
+  config.action_cable.allowed_request_origins = ['https://andrewcoleman-porfolio.herokuapp.com', 'http://andrewcoleman-porfolio.herokuapp.com']
+  config.action_cable.url = "wss://andrewcoleman-porfolio.herokuapp.com/cable"
 end
