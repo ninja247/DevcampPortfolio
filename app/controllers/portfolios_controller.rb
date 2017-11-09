@@ -1,10 +1,7 @@
 class PortfoliosController < ApplicationController
-
-# we need a :set_portfolio_item method before we can use this 
-before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_portfolio_item, only: [:edit, :show, :update, :destroy]
   layout 'portfolio'
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :edit, :sort]}, site_admin: :all
-
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
   
   def index
     @portfolio_items = Portfolio.by_position
@@ -21,8 +18,6 @@ before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
   def angular
     @angular_portfolio_items = Portfolio.angular
   end
-
-
 
   def new
     @portfolio_item = Portfolio.new
@@ -42,11 +37,9 @@ before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
 
   def edit
   end
-  
+
   def update
-    @portfolio_item = Portfolio.find(params[:id])
     respond_to do |format|
-      #redirected to a private variable
       if @portfolio_item.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: 'The record successfully updated.' }
       else
@@ -55,32 +48,29 @@ before_action :set_portfolio_item, only: [:show, :edit, :update, :destroy]
     end
   end
 
-
-
   def show
   end
 
   def destroy
-   #destroy/delete the record
+    # Destroy/delete the record
     @portfolio_item.destroy
 
-    #redirect
+    # Redirect
     respond_to do |format|
-      format.html { redirect_to portfolios_url, notice: 'portfolio was removed' }
+      format.html { redirect_to portfolios_url, notice: 'Record was removed.' }
     end
   end
 
-
   private
-  
+
   def portfolio_params
-    params.require(:portfolio).permit(  :title,
-                                        :subtitle,
-                                        :body,
-                                        :main_image,
-                                        :thumb_image,
-                                        technologies_attributes: [:id, :name, :_destroy]
-                                      )
+    params.require(:portfolio).permit(:title,
+                                      :subtitle,
+                                      :body,
+                                      :main_image,
+                                      :thumb_image,
+                                      technologies_attributes: [:id, :name, :_destroy]
+                                     )
   end
 
   def set_portfolio_item
