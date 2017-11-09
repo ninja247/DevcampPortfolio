@@ -100,6 +100,7 @@ class BlogsController < ApplicationController
   def set_sidebar_topics
     @side_bar_topics = Topic.with_blogs
 #with_blogs is a rails convention ehich interacts with the relations
+#ac redis code make it update live
 
   end
 
